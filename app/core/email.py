@@ -18,11 +18,11 @@ mail_config = ConnectionConfig(
 fast_mail = FastMail(mail_config)
 
 
-async def send_otp_email(email: str, otp: str, full_name: str):
+async def send_otp_email(email: str, otp: str, first_name: str):
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
         <h2 style="color: #1a73e8;">Ondo Logistics — Driver Verification</h2>
-        <p>Hello {full_name},</p>
+        <p>Hello {first_name},</p>
         <p>Your one-time verification code is:</p>
         <div style="background: #f0f4f8; padding: 20px; text-align: center; 
                     border-radius: 8px; margin: 20px 0;">
@@ -47,7 +47,7 @@ async def send_otp_email(email: str, otp: str, full_name: str):
 
 async def send_order_notification_email(
     email: str,
-    full_name: str,
+    first_name: str,
     waybill_number: str,
     status: str,
     origin: str,
@@ -56,7 +56,7 @@ async def send_order_notification_email(
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
         <h2 style="color: #1a73e8;">Order Update</h2>
-        <p>Hello {full_name},</p>
+        <p>Hello {first_name},</p>
         <p>Your order <strong>{waybill_number}</strong> has been updated:</p>
         <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
             <tr><td style="padding: 8px; color: #666;">Route</td>
@@ -77,10 +77,10 @@ async def send_order_notification_email(
     await fast_mail.send_message(message)
 
 
-async def send_driver_welcome_email(email: str, full_name: str):
+async def send_driver_welcome_email(email: str, first_name: str):
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
-        <h2 style="color: #1a73e8;">Welcome, {full_name}!</h2>
+        <h2 style="color: #1a73e8;">Welcome, {first_name}!</h2>
         <p>Your driver account has been verified successfully.</p>
         <p>You can now:</p>
         <ul>

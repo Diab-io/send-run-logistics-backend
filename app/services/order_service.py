@@ -209,7 +209,7 @@ async def update_order_status(
         if sender:
             await send_order_notification_email(
                 email=sender.email,
-                full_name=sender.full_name,
+                first_name=sender.first_name,
                 waybill_number=order.waybill_number,
                 status=new_status.value,
                 origin=order.origin_park,

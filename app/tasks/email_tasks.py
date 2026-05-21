@@ -18,7 +18,7 @@ def _run_async(coro):
     max_retries=3,
     default_retry_delay=10,
 )
-def send_otp_email_task(self, email: str, otp: str, full_name: str):
+def send_otp_email_task(self, email: str, otp: str, first_name: str):
     try:
         html = f"""
         <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
@@ -57,7 +57,7 @@ def send_otp_email_task(self, email: str, otp: str, full_name: str):
 def send_order_notification_task(
     self,
     email: str,
-    full_name: str,
+    first_name: str,
     waybill_number: str,
     status: str,
     origin: str,
@@ -98,7 +98,7 @@ def send_order_notification_task(
     max_retries=3,
     default_retry_delay=10,
 )
-def send_driver_welcome_task(self, email: str, full_name: str):
+def send_driver_welcome_task(self, email: str, first_name: str):
     try:
         html = f"""
         <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">

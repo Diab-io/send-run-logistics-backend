@@ -24,7 +24,7 @@ async def request_otp(email: str, db: AsyncSession) -> dict:
     otp = generate_otp()
     await store_otp(email, otp)
 
-    send_otp_email_task.delay(email, otp, user.full_name)
+    send_otp_email_task.delay(email, otp, user.first_name)
 
     return {"message": "OTP sent to your email"}
 
@@ -47,6 +47,6 @@ async def verify_driver_otp(email: str, otp: str, db: AsyncSession) -> dict:
     )
     await db.commit()
 
-    send_driver_welcome_task.delay(email, user.full_name)
+    send_driver_welcome_task.delay(email, user.first_name)
 
     return {"message": "Driver account verified successfully"}
