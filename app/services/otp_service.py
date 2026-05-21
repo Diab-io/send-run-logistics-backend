@@ -1,16 +1,20 @@
-from fastapi import HTTPException
+from fastapi import HTTPException, BackgroundTasks
 from sqlalchemy import update, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User, UserRole
 from app.core.otp import generate_otp, store_otp, verify_otp
-from app.tasks.email_tasks import (
-    send_otp_email_task,
-    send_driver_welcome_task,
+from app.services.email_service import (
+    send_otp_email,
+    send_driver_welcome_email,
 )
 
 
-async def request_otp(email: str, db: AsyncSession) -> dict:
+async def request_otp(
+    email: str,
+    db: AsyncSession,
+    background_tasks: BackgroundTasks,
+) -> dict:
     result = await db.execute(select(User).where(User.email == email))
     user = result.scalar_one_or_none()
 
@@ -24,12 +28,17 @@ async def request_otp(email: str, db: AsyncSession) -> dict:
     otp = generate_otp()
     await store_otp(email, otp)
 
-    send_otp_email_task.delay(email, otp, user.first_name)
+    background_tasks.add_task(send_otp_email, email, otp, user.full_name)
 
     return {"message": "OTP sent to your email"}
 
 
-async def verify_driver_otp(email: str, otp: str, db: AsyncSession) -> dict:
+async def verify_driver_otp(
+    email: str,
+    otp: str,
+    db: AsyncSession,
+    background_tasks: BackgroundTasks,
+) -> dict:
     result = await db.execute(select(User).where(User.email == email))
     user = result.scalar_one_or_none()
 
@@ -47,6 +56,6 @@ async def verify_driver_otp(email: str, otp: str, db: AsyncSession) -> dict:
     )
     await db.commit()
 
-    send_driver_welcome_task.delay(email, user.first_name)
+    background_tasks.add_task(send_driver_welcome_email, email, user.full_name)
 
     return {"message": "Driver account verified successfully"}

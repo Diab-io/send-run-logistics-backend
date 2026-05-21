@@ -11,8 +11,8 @@ from app.models.user import User, UserRole
 from app.schemas.order import OrderCreate
 from app.services.route_service import get_route_by_origin_destination
 from app.services.pricing_service import predict_price_for_order
-from app.core.email import send_order_notification_email
-from app.tasks.email_tasks import send_order_notification_task
+from app.services.email_service import send_order_notification_email
+import asyncio
 
 
 def _generate_waybill() -> str:
@@ -208,13 +208,15 @@ async def update_order_status(
         sender_result = await db.execute(select(User).where(User.id == order.sender_id))
         sender = sender_result.scalar_one_or_none()
         if sender:
-            send_order_notification_task.delay(
-                email=sender.email,
-                first_name=sender.first_name,
-                waybill_number=order.waybill_number,
-                status=new_status.value,
-                origin=order.origin_park,
-                destination=order.destination,
+            asyncio.create_task(
+                send_order_notification_email(
+                    email=sender.email,
+                    first_name=sender.first_name,
+                    waybill_number=order.waybill_number,
+                    status=new_status.value,
+                    origin=order.origin_park,
+                    destination=order.destination,
+                )
             )
     except Exception:
         pass

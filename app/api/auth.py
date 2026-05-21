@@ -1,5 +1,4 @@
-# api/auth.py
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, BackgroundTasks
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.users import auth_backend, fastapi_users
@@ -44,10 +43,18 @@ router.include_router(
 
 # OTP endpoints
 @router.post("/auth/otp/request", tags=["auth"])
-async def request_driver_otp(data: OTPRequest, db: AsyncSession = Depends(get_db)):
-    return await request_otp(data.email, db)
+async def request_driver_otp(
+    data: OTPRequest,
+    background_tasks: BackgroundTasks,
+    db: AsyncSession = Depends(get_db),
+):
+    return await request_otp(data.email, db, background_tasks)
 
 
 @router.post("/auth/otp/verify", tags=["auth"])
-async def verify_driver_otp_endpoint(data: OTPVerify, db: AsyncSession = Depends(get_db)):
-    return await verify_driver_otp(data.email, data.otp, db)
+async def verify_driver_otp_endpoint(
+    data: OTPVerify,
+    background_tasks: BackgroundTasks,
+    db: AsyncSession = Depends(get_db),
+):
+    return await verify_driver_otp(data.email, data.otp, db, background_tasks)

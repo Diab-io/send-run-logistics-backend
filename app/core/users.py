@@ -14,7 +14,7 @@ from app.database import get_db
 from app.models.user import User, UserRole
 from app.config import get_settings
 from app.core.otp import generate_otp, store_otp
-from app.tasks.email_tasks import send_otp_email_task
+import asyncio
 
 settings = get_settings()
 
@@ -32,7 +32,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
         if user.role == UserRole.DRIVER:
             otp = generate_otp()
             await store_otp(user.email, otp)
-            send_otp_email_task.delay(user.email, otp, user.first_name)
+            asyncio.create_task(send_otp_email(user.email, otp, user.full_name))
 
     async def on_after_forgot_password(self, user: User, token: str, request: Request | None = None):
         # Could send a password reset email here

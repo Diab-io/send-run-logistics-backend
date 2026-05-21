@@ -13,17 +13,6 @@ services:
     volumes:
       - .:/app
 
-  celery_worker:
-    build:
-      context: .
-      dockerfile: Dockerfile.celery
-    env_file:
-      - path: .env
-        required: true
-    depends_on:
-      - redis
-    volumes:
-      - .:/app
 
   redis:
     image: redis:7-alpine
