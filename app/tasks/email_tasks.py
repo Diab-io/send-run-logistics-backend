@@ -1,8 +1,26 @@
 from app.core.celery_app import celery_app
 from app.core.email import fast_mail
-from fastapi_mail import MessageSchema, MessageType
+from fastapi_mail import FastMail, MessageSchema, MessageType, ConnectionConfig
+from app.config import get_settings
+
+
 import asyncio
 
+settings = get_settings()
+
+def _get_mail_client() -> FastMail:
+    config = ConnectionConfig(
+        MAIL_USERNAME=settings.MAIL_USERNAME,
+        MAIL_PASSWORD=settings.MAIL_PASSWORD,
+        MAIL_FROM=settings.MAIL_FROM,
+        MAIL_PORT=settings.MAIL_PORT,
+        MAIL_SERVER=settings.MAIL_SERVER,
+        MAIL_STARTTLS=settings.MAIL_STARTTLS,
+        MAIL_SSL_TLS=settings.MAIL_SSL_TLS,
+        USE_CREDENTIALS=True,
+        VALIDATE_CERTS=False,
+    )
+    return FastMail(config)
 
 def _run_async(coro):
     loop = asyncio.new_event_loop()
@@ -42,7 +60,8 @@ def send_otp_email_task(self, email: str, otp: str, first_name: str):
             body=html,
             subtype=MessageType.html,
         )
-        _run_async(fast_mail.send_message(message))
+        mail = _get_mail_client()
+        _run_async(mail.send_message(message))
 
     except Exception as exc:
         raise self.retry(exc=exc)
@@ -86,7 +105,8 @@ def send_order_notification_task(
             body=html,
             subtype=MessageType.html,
         )
-        _run_async(fast_mail.send_message(message))
+        mail = _get_mail_client()
+        _run_async(mail.send_message(message))
 
     except Exception as exc:
         raise self.retry(exc=exc)
@@ -121,7 +141,8 @@ def send_driver_welcome_task(self, email: str, first_name: str):
             body=html,
             subtype=MessageType.html,
         )
-        _run_async(fast_mail.send_message(message))
+        mail = _get_mail_client()
+        _run_async(mail.send_message(message))
 
     except Exception as exc:
         raise self.retry(exc=exc)
