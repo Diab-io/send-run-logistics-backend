@@ -900,15 +900,6 @@ The report states that with limited data:
 
 The system ships with the baseline as automatic fallback regardless.
 
----
-
-## Defense Demonstration
-
-The system runs entirely on free-tier platforms.
-
-The live demo URL is stable for the defense date at zero cost.
-
----
 
 # License
 
