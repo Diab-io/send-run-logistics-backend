@@ -1,0 +1,14 @@
+date,origin_park,destination,distance_km,estimated_duration_mins,route_risk,package_size,package_weight,vehicle_type,day_of_week,is_festive_period,fuel_price_per_litre,price,source,origin,company,weight_kg,length_cm,width_cm,height_cm
+,Akure,Lagos,0,0,2,,,big_bus,2,False,700.0,8500.0,,Akure,GIGM,5.0,30.0,30.0,30.0
+,Akure,Lagos,0,0,2,,,small_car,2,False,700.0,6000.0,,Akure,local_park,5.0,30.0,30.0,30.0
+,Akure,Ibadan,0,0,2,,,big_bus,2,False,700.0,5000.0,,Akure,GIGM,5.0,30.0,30.0,30.0
+,Akure,Ibadan,0,0,2,,,small_car,2,False,700.0,3500.0,,Akure,local_park,5.0,30.0,30.0,30.0
+,Akure,Benin,0,0,2,,,big_bus,2,False,700.0,5500.0,,Akure,GUO,5.0,30.0,30.0,30.0
+,Akure,Benin,0,0,2,,,small_car,2,False,700.0,4000.0,,Akure,local_park,5.0,30.0,30.0,30.0
+,Akure,Abuja,0,0,3,,,big_bus,2,False,700.0,18000.0,,Akure,GIGM,5.0,30.0,30.0,30.0
+,Akure,Ondo,0,0,2,,,small_car,2,False,700.0,1500.0,,Akure,local_park,5.0,30.0,30.0,30.0
+,Akure,Owo,0,0,2,,,small_car,2,False,700.0,2000.0,,Akure,local_park,5.0,30.0,30.0,30.0
+,Ondo,Lagos,0,0,2,,,small_car,2,False,700.0,7000.0,,Ondo,local_park,5.0,30.0,30.0,30.0
+,Ondo,Ore,0,0,2,,,small_car,2,False,700.0,1800.0,,Ondo,local_park,5.0,30.0,30.0,30.0
+,Owo,Akure,0,0,2,,,small_car,2,False,700.0,2000.0,,Owo,local_park,5.0,30.0,30.0,30.0
+,Ikare,Akure,0,0,3,,,small_car,2,False,700.0,2500.0,,Ikare,local_park,5.0,30.0,30.0,30.0

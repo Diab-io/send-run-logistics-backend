@@ -1,0 +1,301 @@
+date,origin_park,destination,distance_km,estimated_duration_mins,route_risk,package_size,package_weight,vehicle_type,day_of_week,is_festive_period,fuel_price_per_litre,price
+2024-04-24,Owo Park,Benin,125.0,120,3,envelope,light,small_car,2,False,850,2700.0
+2025-03-08,Owo Park,Akure,56.3,60,2,envelope,very_light,small_car,5,False,800,1500.0
+2025-04-04,South Gate Akure,Ibadan,198.0,180,2,medium,heavy,small_car,4,False,850,6300.0
+2024-12-10,South Gate Akure,Ibadan,198.0,180,2,small,light,small_car,1,False,720,3700.0
+2024-05-07,Ondo Town Park,Ore,42.0,45,2,extra_large,light,small_car,1,False,800,2200.0
+2025-12-22,South Gate Akure,Ibadan,198.0,180,2,envelope,medium,big_bus,0,False,700,2100.0
+2025-10-12,Ondo Town Park,Lagos,263.0,240,2,large,light,small_car,6,False,850,9300.0
+2025-06-30,South Gate Akure,Lagos,311.0,270,2,medium,light,small_car,0,False,850,6200.0
+2024-02-27,Ondo Garage Akure,Ikare,82.0,90,3,small,very_light,small_car,1,False,700,1900.0
+2024-11-18,Ikare Park,Akure,82.0,90,3,small,medium,big_bus,0,False,700,1300.0
+2025-07-05,Ondo Town Park,Ore,42.0,45,2,small,medium,big_bus,5,False,700,1100.0
+2024-02-18,South Gate Akure,Abuja,520.0,480,3,large,light,small_car,6,False,800,17100.0
+2024-09-14,Ondo Town Park,Ore,42.0,45,2,extra_large,heavy,small_car,5,False,850,7600.0
+2024-04-24,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,2,False,850,2100.0
+2025-06-03,South Gate Akure,Lagos,311.0,270,2,large,heavy,small_car,1,False,800,10400.0
+2025-07-06,South Gate Akure,Lagos,311.0,270,2,extra_large,heavy,big_bus,6,False,750,9400.0
+2024-11-10,Ondo Garage Akure,Okitipupa,105.0,110,4,small,light,small_car,6,True,850,3500.0
+2024-05-08,South Gate Akure,Abuja,520.0,480,3,small,medium,small_car,2,False,800,9400.0
+2025-12-07,Ondo Town Park,Ore,42.0,45,2,small,light,big_bus,6,False,750,800.0
+2024-12-12,Ondo Garage Akure,Ore,89.5,95,2,envelope,medium,small_car,3,True,850,3500.0
+2024-12-04,Ondo Garage Akure,Okitipupa,105.0,110,4,envelope,light,big_bus,2,False,700,1500.0
+2025-04-29,Owo Park,Akure,56.3,60,2,small,medium,small_car,1,False,850,2100.0
+2024-02-25,Ondo Town Park,Lagos,263.0,240,2,medium,very_heavy,small_car,6,False,720,9200.0
+2025-04-04,Ondo Town Park,Ore,42.0,45,2,small,light,small_car,4,False,680,1200.0
+2024-04-10,Ondo Town Park,Ore,42.0,45,2,envelope,very_heavy,big_bus,2,False,700,2100.0
+2025-02-14,South Gate Akure,Ibadan,198.0,180,2,large,light,small_car,4,False,750,5400.0
+2025-07-23,Ikare Park,Akure,82.0,90,3,medium,medium,small_car,2,False,680,2500.0
+2024-11-17,Ikare Park,Akure,82.0,90,3,envelope,medium,small_car,6,False,700,2400.0
+2025-09-01,Ondo Garage Akure,Ore,89.5,95,2,envelope,heavy,small_car,0,False,800,3500.0
+2024-03-24,Owo Park,Akure,56.3,60,2,medium,medium,small_car,6,False,700,2100.0
+2025-11-18,South Gate Akure,Lagos,311.0,270,2,medium,medium,big_bus,1,False,680,4400.0
+2024-03-16,Ondo Garage Akure,Ore,89.5,95,2,medium,medium,small_car,5,False,680,2600.0
+2025-07-10,Ondo Garage Akure,Okitipupa,105.0,110,4,medium,medium,big_bus,3,False,680,2000.0
+2024-04-16,Owo Park,Benin,125.0,120,3,large,light,small_car,1,False,800,3700.0
+2024-12-17,South Gate Akure,Ibadan,198.0,180,2,small,medium,small_car,1,False,680,3600.0
+2024-02-15,Ondo Garage Akure,Owo,56.3,60,2,envelope,heavy,small_car,3,False,850,3400.0
+2024-01-10,Ondo Town Park,Ore,42.0,45,2,small,heavy,big_bus,2,False,680,1500.0
+2025-03-16,South Gate Akure,Lagos,311.0,270,2,small,light,big_bus,6,False,680,3500.0
+2024-12-28,Ondo Garage Akure,Ore,89.5,95,2,large,heavy,small_car,5,False,700,5200.0
+2024-06-30,South Gate Akure,Abuja,520.0,480,3,large,very_light,big_bus,6,False,750,11600.0
+2024-06-12,Ondo Garage Akure,Owo,56.3,60,2,large,light,big_bus,2,False,700,1300.0
+2024-11-08,Ondo Garage Akure,Ikare,82.0,90,3,large,heavy,small_car,4,False,750,6000.0
+2024-10-12,South Gate Akure,Abuja,520.0,480,3,small,medium,big_bus,5,False,720,8000.0
+2025-08-17,South Gate Akure,Lagos,311.0,270,2,extra_large,light,small_car,6,False,850,14400.0
+2025-01-29,Ondo Garage Akure,Ore,89.5,95,2,large,light,small_car,2,False,800,3000.0
+2025-11-17,Ikare Park,Akure,82.0,90,3,small,medium,big_bus,0,False,800,1800.0
+2024-11-03,Ikare Park,Akure,82.0,90,3,medium,medium,small_car,6,False,800,3500.0
+2024-06-27,Owo Park,Benin,125.0,120,3,medium,light,small_car,3,True,720,3500.0
+2025-04-21,Ondo Garage Akure,Ikare,82.0,90,3,medium,medium,small_car,0,False,850,2600.0
+2025-11-10,Ondo Town Park,Ore,42.0,45,2,medium,light,big_bus,0,False,850,1000.0
+2024-01-26,South Gate Akure,Lagos,311.0,270,2,envelope,very_heavy,small_car,4,False,750,8300.0
+2025-12-14,South Gate Akure,Ibadan,198.0,180,2,small,light,small_car,6,False,680,4100.0
+2025-06-14,Ikare Park,Akure,82.0,90,3,medium,medium,big_bus,5,False,700,2100.0
+2024-11-20,Owo Park,Akure,56.3,60,2,extra_large,heavy,small_car,2,False,800,6700.0
+2024-06-11,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,1,False,850,6900.0
+2025-10-03,Ondo Town Park,Lagos,263.0,240,2,small,medium,big_bus,4,False,720,3200.0
+2024-06-03,South Gate Akure,Lagos,311.0,270,2,small,medium,big_bus,0,True,750,4000.0
+2025-03-06,Ondo Garage Akure,Okitipupa,105.0,110,4,small,heavy,big_bus,3,True,800,3100.0
+2025-02-03,South Gate Akure,Abuja,520.0,480,3,large,very_heavy,small_car,0,False,800,23200.0
+2024-08-12,Ondo Town Park,Lagos,263.0,240,2,small,medium,small_car,0,False,750,5700.0
+2025-09-29,South Gate Akure,Lagos,311.0,270,2,medium,heavy,small_car,0,False,680,6400.0
+2024-07-05,Ondo Town Park,Lagos,263.0,240,2,envelope,light,small_car,4,False,750,4600.0
+2024-09-15,South Gate Akure,Benin,180.0,165,2,large,medium,big_bus,6,True,720,4500.0
+2024-02-01,Ondo Garage Akure,Ondo Town,48.2,55,2,large,light,small_car,3,False,700,1500.0
+2025-04-21,South Gate Akure,Ibadan,198.0,180,2,medium,heavy,small_car,0,False,850,7400.0
+2024-11-14,South Gate Akure,Lagos,311.0,270,2,small,very_light,small_car,3,False,750,5700.0
+2025-08-29,Ondo Garage Akure,Ore,89.5,95,2,medium,medium,small_car,4,False,850,2700.0
+2024-02-12,Owo Park,Akure,56.3,60,2,small,medium,small_car,0,False,720,1800.0
+2024-04-18,Ondo Town Park,Lagos,263.0,240,2,medium,light,big_bus,3,False,700,3400.0
+2024-10-03,Owo Park,Benin,125.0,120,3,medium,heavy,big_bus,3,False,850,3200.0
+2024-03-29,South Gate Akure,Ibadan,198.0,180,2,small,medium,big_bus,4,False,850,2500.0
+2024-11-28,Ondo Garage Akure,Okitipupa,105.0,110,4,small,light,big_bus,3,False,800,1600.0
+2025-06-13,Ondo Garage Akure,Ondo Town,48.2,55,2,large,very_light,big_bus,4,False,700,1200.0
+2025-04-03,Ondo Town Park,Lagos,263.0,240,2,large,very_light,small_car,3,False,720,6200.0
+2025-06-27,Ondo Town Park,Ore,42.0,45,2,small,very_heavy,small_car,4,False,750,4400.0
+2024-07-16,Ondo Garage Akure,Ore,89.5,95,2,small,medium,big_bus,1,False,700,1400.0
+2025-08-26,Ikare Park,Akure,82.0,90,3,extra_large,medium,small_car,1,False,700,3900.0
+2024-01-15,Ondo Garage Akure,Owo,56.3,60,2,medium,light,small_car,0,True,720,2100.0
+2024-04-15,Ondo Town Park,Lagos,263.0,240,2,large,medium,small_car,0,False,700,6500.0
+2025-05-04,Ondo Garage Akure,Okitipupa,105.0,110,4,small,very_light,small_car,6,False,850,2900.0
+2024-03-28,Ondo Garage Akure,Owo,56.3,60,2,extra_large,light,big_bus,3,False,800,1700.0
+2025-03-29,Ondo Town Park,Lagos,263.0,240,2,small,medium,small_car,5,False,680,6100.0
+2025-10-02,South Gate Akure,Ibadan,198.0,180,2,small,medium,small_car,3,False,680,3600.0
+2025-08-31,Ikare Park,Akure,82.0,90,3,medium,very_light,small_car,6,False,750,2100.0
+2025-10-02,South Gate Akure,Abuja,520.0,480,3,medium,heavy,small_car,3,False,700,13100.0
+2024-05-25,Ondo Garage Akure,Okitipupa,105.0,110,4,envelope,light,small_car,5,False,800,2700.0
+2025-12-17,Ondo Garage Akure,Owo,56.3,60,2,medium,light,small_car,2,False,800,1600.0
+2025-09-10,Ondo Garage Akure,Ikare,82.0,90,3,small,very_light,big_bus,2,False,800,1100.0
+2025-11-19,South Gate Akure,Abuja,520.0,480,3,large,medium,big_bus,2,False,800,11200.0
+2025-08-22,South Gate Akure,Lagos,311.0,270,2,medium,heavy,big_bus,4,False,750,5100.0
+2024-06-13,Ondo Garage Akure,Okitipupa,105.0,110,4,small,medium,small_car,3,False,800,2700.0
+2024-11-27,Ondo Garage Akure,Owo,56.3,60,2,small,heavy,big_bus,2,False,680,1600.0
+2024-02-25,South Gate Akure,Benin,180.0,165,2,small,light,big_bus,6,False,680,2400.0
+2025-12-16,Ondo Town Park,Lagos,263.0,240,2,medium,very_light,small_car,1,False,850,5800.0
+2025-02-21,Ondo Town Park,Ore,42.0,45,2,envelope,very_heavy,big_bus,4,False,680,1900.0
+2024-10-25,Ikare Park,Akure,82.0,90,3,medium,light,big_bus,4,False,700,1100.0
+2025-09-05,South Gate Akure,Ibadan,198.0,180,2,medium,heavy,big_bus,4,False,750,3900.0
+2024-01-03,Ondo Garage Akure,Owo,56.3,60,2,small,light,small_car,2,False,750,1400.0
+2024-12-19,Ondo Town Park,Lagos,263.0,240,2,small,heavy,small_car,3,False,700,5600.0
+2024-08-27,South Gate Akure,Benin,180.0,165,2,large,medium,small_car,1,False,750,5800.0
+2025-10-29,Ondo Garage Akure,Okitipupa,105.0,110,4,extra_large,medium,small_car,2,False,800,5000.0
+2025-03-26,Ondo Garage Akure,Okitipupa,105.0,110,4,envelope,heavy,small_car,2,False,850,4100.0
+2024-09-28,South Gate Akure,Abuja,520.0,480,3,small,medium,small_car,5,False,850,12200.0
+2025-05-14,Ikare Park,Akure,82.0,90,3,large,very_light,small_car,2,False,720,3000.0
+2024-04-10,South Gate Akure,Benin,180.0,165,2,large,medium,small_car,2,False,720,4700.0
+2024-02-27,South Gate Akure,Abuja,520.0,480,3,small,light,small_car,1,False,800,9000.0
+2024-03-21,South Gate Akure,Lagos,311.0,270,2,medium,light,big_bus,3,False,800,4100.0
+2025-04-15,Ondo Garage Akure,Owo,56.3,60,2,small,very_light,big_bus,1,False,850,900.0
+2025-08-24,Ondo Garage Akure,Ikare,82.0,90,3,small,very_heavy,big_bus,6,False,720,3200.0
+2025-01-25,South Gate Akure,Ibadan,198.0,180,2,medium,medium,big_bus,5,False,850,4000.0
+2024-02-20,South Gate Akure,Abuja,520.0,480,3,large,medium,big_bus,1,False,700,8300.0
+2024-07-13,Owo Park,Benin,125.0,120,3,medium,medium,big_bus,5,False,700,2600.0
+2025-03-27,Ondo Garage Akure,Owo,56.3,60,2,envelope,light,small_car,3,False,720,1100.0
+2025-07-06,South Gate Akure,Lagos,311.0,270,2,large,light,small_car,6,False,700,7900.0
+2024-10-29,South Gate Akure,Abuja,520.0,480,3,medium,light,small_car,1,False,700,9000.0
+2025-11-21,Owo Park,Benin,125.0,120,3,extra_large,very_heavy,big_bus,4,False,750,6300.0
+2025-01-12,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,6,False,720,4900.0
+2024-12-01,Ondo Town Park,Ore,42.0,45,2,large,light,small_car,6,False,850,1900.0
+2024-11-07,Ondo Garage Akure,Ondo Town,48.2,55,2,extra_large,light,small_car,3,False,750,2400.0
+2025-12-14,Ikare Park,Akure,82.0,90,3,large,medium,big_bus,6,False,750,2700.0
+2024-02-03,Ondo Garage Akure,Owo,56.3,60,2,medium,light,small_car,5,False,720,1600.0
+2025-01-02,Owo Park,Benin,125.0,120,3,envelope,light,big_bus,3,False,750,1300.0
+2025-09-03,Owo Park,Benin,125.0,120,3,extra_large,very_light,small_car,2,False,800,5300.0
+2024-07-31,Ondo Town Park,Ore,42.0,45,2,medium,heavy,small_car,2,False,800,3800.0
+2024-05-13,South Gate Akure,Lagos,311.0,270,2,medium,heavy,small_car,0,False,700,7800.0
+2025-08-25,South Gate Akure,Ibadan,198.0,180,2,small,light,small_car,0,False,800,3300.0
+2025-01-05,Ondo Town Park,Lagos,263.0,240,2,medium,light,small_car,6,False,680,5700.0
+2025-04-14,Ondo Garage Akure,Owo,56.3,60,2,medium,very_light,big_bus,0,False,750,1000.0
+2024-03-16,Ondo Town Park,Lagos,263.0,240,2,large,light,small_car,5,False,800,7700.0
+2025-06-27,Owo Park,Akure,56.3,60,2,small,medium,small_car,4,False,680,1800.0
+2025-07-18,South Gate Akure,Abuja,520.0,480,3,medium,light,small_car,4,False,720,9800.0
+2024-04-07,Ikare Park,Akure,82.0,90,3,small,light,small_car,6,False,850,2700.0
+2025-03-18,Ondo Garage Akure,Ore,89.5,95,2,envelope,medium,big_bus,1,False,800,1500.0
+2024-05-05,Owo Park,Benin,125.0,120,3,medium,heavy,big_bus,6,False,850,3300.0
+2025-08-14,Ondo Garage Akure,Ore,89.5,95,2,medium,light,small_car,3,False,720,2000.0
+2024-10-12,South Gate Akure,Abuja,520.0,480,3,medium,heavy,big_bus,5,False,800,8300.0
+2025-12-11,Owo Park,Benin,125.0,120,3,small,light,big_bus,3,False,720,1500.0
+2025-08-02,South Gate Akure,Lagos,311.0,270,2,medium,very_light,big_bus,5,False,680,4000.0
+2024-06-10,Ondo Garage Akure,Ikare,82.0,90,3,small,medium,big_bus,0,False,680,1300.0
+2025-09-24,South Gate Akure,Abuja,520.0,480,3,envelope,very_light,small_car,2,False,800,8100.0
+2025-06-08,South Gate Akure,Abuja,520.0,480,3,small,medium,small_car,6,False,750,9900.0
+2024-02-26,Owo Park,Akure,56.3,60,2,envelope,light,small_car,0,False,720,1000.0
+2025-03-16,Ondo Town Park,Lagos,263.0,240,2,small,light,big_bus,6,False,850,4400.0
+2025-03-22,Ondo Garage Akure,Ondo Town,48.2,55,2,envelope,heavy,big_bus,5,False,800,1700.0
+2024-01-22,South Gate Akure,Benin,180.0,165,2,extra_large,light,big_bus,0,False,850,3900.0
+2024-04-18,Ondo Garage Akure,Okitipupa,105.0,110,4,small,medium,small_car,3,False,720,2800.0
+2024-06-21,South Gate Akure,Abuja,520.0,480,3,envelope,medium,small_car,4,False,720,9300.0
+2024-05-31,Owo Park,Benin,125.0,120,3,small,light,small_car,4,False,850,3300.0
+2025-05-20,Owo Park,Benin,125.0,120,3,medium,medium,small_car,1,False,800,4400.0
+2025-10-04,Ondo Garage Akure,Ikare,82.0,90,3,small,medium,small_car,5,False,720,2300.0
+2025-04-07,Ondo Town Park,Lagos,263.0,240,2,envelope,light,small_car,0,False,680,3700.0
+2025-08-17,Ondo Town Park,Lagos,263.0,240,2,medium,heavy,big_bus,6,False,800,5200.0
+2024-03-04,South Gate Akure,Lagos,311.0,270,2,medium,heavy,big_bus,0,False,680,4000.0
+2025-12-25,South Gate Akure,Ibadan,198.0,180,2,medium,medium,small_car,3,False,720,4300.0
+2024-12-12,South Gate Akure,Abuja,520.0,480,3,medium,very_light,small_car,3,False,720,10000.0
+2024-09-15,Ondo Garage Akure,Owo,56.3,60,2,medium,medium,big_bus,6,False,720,1500.0
+2025-11-02,Ondo Garage Akure,Owo,56.3,60,2,medium,light,small_car,6,False,720,1600.0
+2025-11-17,South Gate Akure,Lagos,311.0,270,2,medium,heavy,big_bus,0,False,680,4400.0
+2024-01-19,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,4,False,750,2100.0
+2024-03-20,South Gate Akure,Lagos,311.0,270,2,small,heavy,small_car,2,False,850,7100.0
+2025-09-24,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,2,False,800,1900.0
+2024-02-14,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,2,False,720,6000.0
+2025-06-30,South Gate Akure,Ibadan,198.0,180,2,small,very_heavy,big_bus,0,False,700,4400.0
+2025-04-17,Ondo Town Park,Lagos,263.0,240,2,large,heavy,small_car,3,False,700,9500.0
+2024-09-13,South Gate Akure,Lagos,311.0,270,2,envelope,medium,small_car,4,False,850,6600.0
+2024-03-26,Ondo Garage Akure,Owo,56.3,60,2,large,light,big_bus,1,False,750,1400.0
+2025-04-06,Ondo Garage Akure,Okitipupa,105.0,110,4,large,heavy,small_car,6,False,720,6900.0
+2024-11-22,Ondo Garage Akure,Ondo Town,48.2,55,2,large,heavy,small_car,4,False,700,4500.0
+2025-12-13,Ondo Town Park,Lagos,263.0,240,2,large,heavy,small_car,5,False,680,7800.0
+2025-09-15,Ikare Park,Akure,82.0,90,3,medium,light,small_car,0,False,680,2000.0
+2025-04-13,Owo Park,Akure,56.3,60,2,envelope,heavy,small_car,6,False,850,3200.0
+2024-01-02,South Gate Akure,Benin,180.0,165,2,medium,light,small_car,1,False,680,3200.0
+2025-07-11,Ondo Town Park,Ore,42.0,45,2,medium,very_heavy,small_car,4,False,750,5000.0
+2024-09-16,Ondo Garage Akure,Ikare,82.0,90,3,medium,light,small_car,0,False,850,2600.0
+2024-12-06,Ikare Park,Akure,82.0,90,3,small,light,small_car,4,False,850,2300.0
+2024-07-05,Owo Park,Benin,125.0,120,3,large,very_light,big_bus,4,False,720,2500.0
+2024-11-19,Ondo Garage Akure,Ondo Town,48.2,55,2,large,medium,big_bus,1,False,720,1500.0
+2024-12-31,Ondo Garage Akure,Owo,56.3,60,2,large,very_light,big_bus,1,False,720,1200.0
+2025-01-30,Ondo Town Park,Lagos,263.0,240,2,small,light,big_bus,3,False,800,2800.0
+2024-03-21,South Gate Akure,Benin,180.0,165,2,medium,very_heavy,small_car,3,False,680,7200.0
+2025-04-01,Ondo Garage Akure,Owo,56.3,60,2,medium,medium,big_bus,1,False,680,1300.0
+2025-03-21,Owo Park,Akure,56.3,60,2,small,very_heavy,big_bus,4,True,850,4100.0
+2024-02-01,South Gate Akure,Lagos,311.0,270,2,small,medium,big_bus,3,True,680,4000.0
+2024-02-03,Owo Park,Akure,56.3,60,2,medium,medium,big_bus,5,False,680,1300.0
+2024-10-12,Owo Park,Benin,125.0,120,3,small,light,big_bus,5,False,750,2100.0
+2025-04-01,Ikare Park,Akure,82.0,90,3,small,medium,big_bus,1,False,700,1500.0
+2024-06-25,Ondo Town Park,Lagos,263.0,240,2,large,medium,small_car,1,False,720,7600.0
+2025-07-09,Ondo Town Park,Ore,42.0,45,2,small,light,small_car,2,False,850,1500.0
+2024-08-17,Ondo Town Park,Ore,42.0,45,2,small,light,small_car,5,False,680,1200.0
+2024-05-12,Ondo Town Park,Ore,42.0,45,2,medium,very_light,small_car,6,False,850,1600.0
+2024-03-16,Owo Park,Akure,56.3,60,2,small,light,small_car,5,False,800,1800.0
+2025-08-24,Owo Park,Benin,125.0,120,3,small,very_heavy,small_car,6,False,680,6500.0
+2024-11-26,South Gate Akure,Lagos,311.0,270,2,large,light,big_bus,1,False,720,4600.0
+2025-07-18,Owo Park,Benin,125.0,120,3,small,medium,small_car,4,False,850,4000.0
+2024-06-24,South Gate Akure,Lagos,311.0,270,2,medium,medium,small_car,0,False,800,7600.0
+2024-02-16,Ondo Garage Akure,Ore,89.5,95,2,large,heavy,small_car,4,False,800,5900.0
+2025-10-04,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,5,False,850,7600.0
+2025-03-26,South Gate Akure,Lagos,311.0,270,2,medium,medium,small_car,2,False,850,8400.0
+2025-02-12,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,2,False,750,1800.0
+2024-04-09,South Gate Akure,Lagos,311.0,270,2,envelope,heavy,big_bus,1,False,700,4200.0
+2024-11-16,Ikare Park,Akure,82.0,90,3,small,light,big_bus,5,False,720,1300.0
+2024-09-03,Ondo Town Park,Lagos,263.0,240,2,small,light,small_car,1,False,850,4900.0
+2024-04-20,Ondo Garage Akure,Ondo Town,48.2,55,2,medium,heavy,big_bus,5,False,720,1900.0
+2025-07-20,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,6,False,800,2600.0
+2025-01-17,South Gate Akure,Benin,180.0,165,2,large,light,big_bus,4,False,700,2900.0
+2024-02-16,Ondo Garage Akure,Ondo Town,48.2,55,2,envelope,medium,big_bus,4,False,700,900.0
+2025-09-19,Ondo Garage Akure,Ikare,82.0,90,3,small,light,small_car,4,False,800,2200.0
+2025-05-16,Ondo Town Park,Ore,42.0,45,2,medium,light,big_bus,4,False,850,900.0
+2025-12-05,Ondo Garage Akure,Owo,56.3,60,2,medium,medium,small_car,4,False,800,2400.0
+2025-05-06,Owo Park,Akure,56.3,60,2,small,medium,small_car,1,False,700,1700.0
+2025-12-18,Owo Park,Akure,56.3,60,2,small,very_light,small_car,3,False,850,1600.0
+2025-04-27,Owo Park,Akure,56.3,60,2,large,medium,small_car,6,False,700,3000.0
+2024-11-17,South Gate Akure,Benin,180.0,165,2,extra_large,medium,small_car,6,False,850,9500.0
+2024-09-27,Ikare Park,Akure,82.0,90,3,medium,light,small_car,4,False,700,2400.0
+2024-10-22,South Gate Akure,Abuja,520.0,480,3,medium,medium,small_car,1,False,800,13100.0
+2024-10-21,Ondo Garage Akure,Owo,56.3,60,2,small,medium,small_car,0,False,720,2000.0
+2024-02-13,Ondo Garage Akure,Owo,56.3,60,2,small,medium,small_car,1,False,720,1700.0
+2025-07-05,Ondo Garage Akure,Okitipupa,105.0,110,4,small,medium,small_car,5,False,850,4000.0
+2024-08-19,Ondo Town Park,Ore,42.0,45,2,medium,very_light,small_car,0,False,680,1100.0
+2024-06-10,Ondo Town Park,Ore,42.0,45,2,medium,heavy,big_bus,0,False,700,1600.0
+2025-10-23,Ondo Garage Akure,Owo,56.3,60,2,envelope,heavy,big_bus,3,False,850,2000.0
+2025-03-03,South Gate Akure,Lagos,311.0,270,2,large,light,big_bus,0,False,750,4700.0
+2024-10-23,Ikare Park,Akure,82.0,90,3,large,very_light,small_car,2,False,720,3000.0
+2025-06-20,Ondo Town Park,Ore,42.0,45,2,medium,heavy,big_bus,4,False,700,1600.0
+2025-04-14,Ikare Park,Akure,82.0,90,3,medium,medium,small_car,0,False,720,2900.0
+2025-09-17,South Gate Akure,Lagos,311.0,270,2,large,heavy,big_bus,2,False,680,5100.0
+2025-05-03,South Gate Akure,Lagos,311.0,270,2,small,light,small_car,5,False,720,6500.0
+2024-09-24,Ondo Garage Akure,Ondo Town,48.2,55,2,medium,medium,small_car,1,False,720,2000.0
+2024-11-14,Ikare Park,Akure,82.0,90,3,medium,medium,big_bus,3,False,700,1400.0
+2025-04-10,South Gate Akure,Lagos,311.0,270,2,medium,medium,small_car,3,False,750,7200.0
+2024-08-11,Ondo Garage Akure,Okitipupa,105.0,110,4,large,medium,small_car,6,False,800,4700.0
+2024-04-24,Owo Park,Akure,56.3,60,2,envelope,medium,small_car,2,False,700,1700.0
+2024-04-29,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,0,False,750,5700.0
+2025-03-01,Ondo Town Park,Ore,42.0,45,2,medium,very_light,small_car,5,False,850,1300.0
+2025-08-15,South Gate Akure,Ibadan,198.0,180,2,envelope,medium,big_bus,4,False,680,1900.0
+2024-02-02,Ondo Town Park,Lagos,263.0,240,2,small,light,small_car,4,False,850,5100.0
+2025-04-04,South Gate Akure,Benin,180.0,165,2,large,heavy,small_car,4,False,850,7500.0
+2024-12-22,Ondo Garage Akure,Okitipupa,105.0,110,4,small,very_heavy,small_car,6,False,700,8500.0
+2025-11-20,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,3,False,750,5300.0
+2024-04-25,Ikare Park,Akure,82.0,90,3,envelope,medium,small_car,3,False,680,1700.0
+2024-02-04,Owo Park,Akure,56.3,60,2,medium,medium,big_bus,6,False,680,1200.0
+2024-02-27,Ondo Garage Akure,Okitipupa,105.0,110,4,small,very_heavy,small_car,1,False,800,7100.0
+2024-11-24,Owo Park,Benin,125.0,120,3,small,heavy,big_bus,6,False,750,3200.0
+2024-06-28,Ikare Park,Akure,82.0,90,3,medium,medium,small_car,4,False,850,3400.0
+2025-12-14,Ondo Garage Akure,Ikare,82.0,90,3,medium,light,small_car,6,False,750,2500.0
+2025-04-19,South Gate Akure,Lagos,311.0,270,2,large,medium,big_bus,5,False,700,5300.0
+2025-04-05,Ondo Garage Akure,Ore,89.5,95,2,large,very_light,big_bus,5,False,720,1600.0
+2024-07-11,Ondo Garage Akure,Ore,89.5,95,2,large,medium,big_bus,3,False,700,2000.0
+2024-08-04,Ondo Garage Akure,Ondo Town,48.2,55,2,large,very_heavy,small_car,6,False,750,9000.0
+2024-09-02,South Gate Akure,Benin,180.0,165,2,medium,heavy,small_car,0,False,720,5100.0
+2025-04-22,Ondo Town Park,Lagos,263.0,240,2,envelope,very_heavy,small_car,1,False,700,6600.0
+2024-08-14,Owo Park,Akure,56.3,60,2,medium,very_light,small_car,2,False,850,1600.0
+2024-08-23,Ondo Garage Akure,Ikare,82.0,90,3,small,heavy,small_car,4,False,850,4600.0
+2025-10-19,Ondo Town Park,Lagos,263.0,240,2,medium,medium,big_bus,6,False,700,4500.0
+2025-10-19,Ondo Town Park,Ore,42.0,45,2,extra_large,medium,big_bus,6,True,850,2000.0
+2024-08-24,Owo Park,Benin,125.0,120,3,envelope,light,small_car,5,False,680,2500.0
+2025-11-06,Ondo Town Park,Lagos,263.0,240,2,medium,very_light,small_car,3,True,800,6600.0
+2025-12-15,Ondo Town Park,Ore,42.0,45,2,medium,heavy,big_bus,0,False,680,1500.0
+2025-06-23,Owo Park,Akure,56.3,60,2,small,light,big_bus,0,True,750,1200.0
+2025-12-01,Ondo Garage Akure,Owo,56.3,60,2,large,very_light,big_bus,0,False,680,1100.0
+2025-05-02,Ondo Town Park,Ore,42.0,45,2,envelope,very_light,small_car,4,False,750,1000.0
+2024-04-07,Ondo Garage Akure,Okitipupa,105.0,110,4,large,heavy,small_car,6,False,850,7400.0
+2025-12-01,Ondo Garage Akure,Ore,89.5,95,2,large,heavy,small_car,0,True,720,5200.0
+2025-12-30,Ondo Garage Akure,Okitipupa,105.0,110,4,large,heavy,small_car,1,False,800,6900.0
+2024-12-05,Ondo Town Park,Ore,42.0,45,2,small,medium,big_bus,3,False,680,1000.0
+2024-04-10,Ondo Garage Akure,Ondo Town,48.2,55,2,medium,heavy,small_car,2,False,800,3900.0
+2025-10-11,Ondo Garage Akure,Ondo Town,48.2,55,2,small,very_heavy,small_car,5,False,750,5800.0
+2025-09-25,Ondo Garage Akure,Ore,89.5,95,2,small,light,small_car,3,False,750,2000.0
+2025-02-02,Ikare Park,Akure,82.0,90,3,small,light,small_car,6,False,720,1800.0
+2025-04-04,South Gate Akure,Benin,180.0,165,2,medium,medium,small_car,4,False,800,4600.0
+2025-01-29,Ondo Garage Akure,Ikare,82.0,90,3,envelope,medium,big_bus,2,False,800,1700.0
+2025-06-17,Owo Park,Akure,56.3,60,2,small,light,small_car,1,False,750,1200.0
+2025-03-07,Ondo Garage Akure,Owo,56.3,60,2,small,heavy,small_car,4,False,850,3700.0
+2025-04-13,South Gate Akure,Ibadan,198.0,180,2,small,light,big_bus,6,False,800,2800.0
+2025-10-28,South Gate Akure,Benin,180.0,165,2,extra_large,light,small_car,1,False,700,5000.0
+2024-11-22,South Gate Akure,Benin,180.0,165,2,small,medium,small_car,4,False,700,3300.0
+2025-02-06,South Gate Akure,Abuja,520.0,480,3,small,heavy,small_car,3,False,700,10700.0
+2025-04-17,Ikare Park,Akure,82.0,90,3,large,light,big_bus,3,False,680,1800.0
+2025-11-20,South Gate Akure,Benin,180.0,165,2,medium,medium,small_car,3,False,850,4600.0
+2025-09-04,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,3,False,850,5500.0
+2025-12-19,Ondo Garage Akure,Ikare,82.0,90,3,large,medium,small_car,4,False,700,3200.0
+2025-09-19,Owo Park,Benin,125.0,120,3,envelope,very_heavy,big_bus,4,False,720,3200.0
+2024-04-10,Ondo Garage Akure,Ondo Town,48.2,55,2,small,medium,small_car,2,False,800,1800.0
+2025-11-26,Ondo Town Park,Lagos,263.0,240,2,medium,medium,small_car,2,True,680,5600.0
+2024-05-25,Ondo Garage Akure,Okitipupa,105.0,110,4,small,light,big_bus,5,False,720,1800.0
+2024-03-09,Ondo Garage Akure,Ikare,82.0,90,3,small,heavy,small_car,5,False,850,5300.0
+2024-09-06,Ikare Park,Akure,82.0,90,3,medium,medium,small_car,4,False,750,2600.0
+2024-07-09,South Gate Akure,Lagos,311.0,270,2,medium,medium,small_car,1,False,700,5900.0
+2025-12-22,Ondo Garage Akure,Ondo Town,48.2,55,2,small,light,big_bus,0,False,800,900.0
+2025-01-09,South Gate Akure,Lagos,311.0,270,2,small,medium,small_car,3,False,800,6000.0
+2025-09-17,South Gate Akure,Benin,180.0,165,2,small,light,small_car,2,False,700,3300.0
+2025-09-21,Ondo Garage Akure,Owo,56.3,60,2,medium,medium,small_car,6,False,680,2100.0
+2025-09-02,South Gate Akure,Benin,180.0,165,2,small,light,small_car,1,False,850,4300.0
+2025-07-22,South Gate Akure,Lagos,311.0,270,2,small,light,small_car,1,False,800,5400.0
+2025-05-11,Ondo Garage Akure,Ondo Town,48.2,55,2,small,heavy,big_bus,6,False,750,2000.0
+2025-05-15,Ondo Town Park,Lagos,263.0,240,2,small,medium,big_bus,3,False,680,3000.0
+2025-04-13,South Gate Akure,Lagos,311.0,270,2,medium,heavy,small_car,6,False,800,10000.0
+2025-07-09,Ondo Garage Akure,Ikare,82.0,90,3,large,very_light,big_bus,2,False,750,1900.0
+2024-09-10,South Gate Akure,Abuja,520.0,480,3,small,very_heavy,small_car,1,False,680,13500.0
+2024-08-30,South Gate Akure,Abuja,520.0,480,3,small,medium,big_bus,4,False,800,6200.0
