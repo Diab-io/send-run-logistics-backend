@@ -12,6 +12,7 @@ from app.schemas.order import OrderCreate
 from app.services.route_service import get_route_by_origin_destination
 from app.services.pricing_service import predict_price_for_order
 from app.core.email import send_order_notification_email
+from app.tasks.email_tasks import send_order_notification_task
 
 
 def _generate_waybill() -> str:
@@ -207,7 +208,7 @@ async def update_order_status(
         sender_result = await db.execute(select(User).where(User.id == order.sender_id))
         sender = sender_result.scalar_one_or_none()
         if sender:
-            await send_order_notification_email(
+            send_order_notification_task.delay(
                 email=sender.email,
                 first_name=sender.first_name,
                 waybill_number=order.waybill_number,
@@ -216,6 +217,6 @@ async def update_order_status(
                 destination=order.destination,
             )
     except Exception:
-        pass  # don't fail the status update over an email error
+        pass
 
     return order

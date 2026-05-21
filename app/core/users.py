@@ -32,7 +32,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
         if user.role == UserRole.DRIVER:
             otp = generate_otp()
             await store_otp(user.email, otp)
-            await send_otp_email(user.email, otp, user.first_name)
+            send_otp_email_task.delay(user.email, otp, user.first_name)
 
     async def on_after_forgot_password(self, user: User, token: str, request: Request | None = None):
         # Could send a password reset email here
