@@ -13,8 +13,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models.user import User, UserRole
 from app.config import get_settings
-from app.core.email import send_otp_email, send_driver_welcome_email
 from app.core.otp import generate_otp, store_otp
+from app.tasks.email_tasks import send_otp_email_task
 
 settings = get_settings()
 
