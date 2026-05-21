@@ -141,9 +141,9 @@ pending → accepted → picked_up → in_transit → delivered
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ondo-logistics-api.git
+git clone https://github.com/Diab-io/send-run-logistics-backend.git
 
-cd ondo-logistics-api
+cd send-run-logistics-backend
 ```
 
 ## 2. Create and activate virtual environment
@@ -191,7 +191,7 @@ python -m scripts.seed_routes
 ## 7. Generate dummy data and train the model
 
 ```bash
-python -m app.ml.dummy_data
+python -m scripts.dummy_data
 
 python -m scripts.run_pipeline --survey data/dummy_waybill_data.csv
 ```
@@ -319,7 +319,7 @@ trained_models/                        pricing_predictor.predict()
 # Step 1 — Generate Dummy Data
 
 ```bash
-python -m app.ml.dummy_data
+python -m scripts.dummy_data
 ```
 
 Output:
