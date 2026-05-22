@@ -14,6 +14,7 @@ from app.database import get_db
 from app.models.user import User, UserRole
 from app.config import get_settings
 from app.core.otp import generate_otp, store_otp
+from app.services.email_service import send_otp_email
 import asyncio
 
 settings = get_settings()
