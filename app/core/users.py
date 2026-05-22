@@ -33,7 +33,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
         if user.role == UserRole.DRIVER:
             otp = generate_otp()
             await store_otp(user.email, otp)
-            asyncio.create_task(send_otp_email(user.email, otp, user.first_name))
+            asyncio.ensure_future(send_otp_email(user.email, otp, user.first_name))
 
     async def on_after_forgot_password(self, user: User, token: str, request: Request | None = None):
         # Could send a password reset email here
