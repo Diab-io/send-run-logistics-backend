@@ -28,7 +28,7 @@ async def request_otp(
     otp = generate_otp()
     await store_otp(email, otp)
 
-    background_tasks.add_task(send_otp_email, email, otp, user.full_name)
+    background_tasks.add_task(send_otp_email, email, otp, user.first_name)
 
     return {"message": "OTP sent to your email"}
 
@@ -56,6 +56,6 @@ async def verify_driver_otp(
     )
     await db.commit()
 
-    background_tasks.add_task(send_driver_welcome_email, email, user.full_name)
+    background_tasks.add_task(send_driver_welcome_email, email, user.first_name)
 
     return {"message": "Driver account verified successfully"}
