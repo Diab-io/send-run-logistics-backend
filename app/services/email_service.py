@@ -5,19 +5,19 @@ from app.config import get_settings
 settings = get_settings()
 
 
-def _get_mail_client() -> FastMail:
-    config = ConnectionConfig(
-        MAIL_USERNAME=settings.MAIL_USERNAME,
-        MAIL_PASSWORD=settings.MAIL_PASSWORD,
-        MAIL_FROM=settings.MAIL_FROM,
-        MAIL_PORT=settings.MAIL_PORT,
-        MAIL_SERVER=settings.MAIL_SERVER,
-        MAIL_STARTTLS=settings.MAIL_STARTTLS,
-        MAIL_SSL_TLS=settings.MAIL_SSL_TLS,
-        USE_CREDENTIALS=True,
-        VALIDATE_CERTS=False,
-    )
-    return FastMail(config)
+config = ConnectionConfig(
+    MAIL_USERNAME=settings.MAIL_USERNAME,
+    MAIL_PASSWORD=settings.MAIL_PASSWORD,
+    MAIL_FROM=settings.MAIL_FROM,
+    MAIL_PORT=settings.MAIL_PORT,
+    MAIL_SERVER=settings.MAIL_SERVER,
+    MAIL_STARTTLS=settings.MAIL_STARTTLS,
+    MAIL_SSL_TLS=settings.MAIL_SSL_TLS,
+    USE_CREDENTIALS=True,
+    VALIDATE_CERTS=False,
+)
+
+mail_client = FastMail(config)
 
 
 async def send_otp_email(email: str, otp: str, first_name: str):
@@ -44,8 +44,7 @@ async def send_otp_email(email: str, otp: str, first_name: str):
         subtype=MessageType.html,
     )
     try:
-        mail = _get_mail_client()
-        await mail.send_message(message)
+        await mail_client.send_message(message)
     except Exception as e:
         # Log but do not crash — email failure should not break registration
         print(f"Failed to send OTP email to {email}: {e}")
@@ -87,8 +86,7 @@ async def send_order_notification_email(
         subtype=MessageType.html,
     )
     try:
-        mail = _get_mail_client()
-        await mail.send_message(message)
+        await mail_client.send_message(message)
     except Exception as e:
         print(f"Failed to send order notification to {email}: {e}")
 
@@ -116,7 +114,6 @@ async def send_driver_welcome_email(email: str, first_name: str):
         subtype=MessageType.html,
     )
     try:
-        mail = _get_mail_client()
-        await mail.send_message(message)
+        await mail_client.send_message(message)
     except Exception as e:
         print(f"Failed to send welcome email to {email}: {e}")
