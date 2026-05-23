@@ -11,10 +11,10 @@ class Settings(BaseSettings):
     MAIL_USERNAME: str
     MAIL_PASSWORD: str
     MAIL_FROM: str
-    MAIL_PORT: int = 587
+    MAIL_PORT: int = 465
     MAIL_SERVER: str = "smtp.gmail.com"
-    MAIL_STARTTLS: bool = True
-    MAIL_SSL_TLS: bool = False
+    MAIL_STARTTLS: bool = False
+    MAIL_SSL_TLS: bool = True
     REDIS_URL: str = "redis://localhost:6379/0"
     ML_MODEL_PATH: str = "app/trained_models/pricing_pipeline.joblib"
     OTP_EXPIRY_SECONDS: int = 600
