@@ -12,6 +12,7 @@ from app.schemas.order import OrderCreate
 from app.services.route_service import get_route_by_origin_destination
 from app.services.pricing_service import predict_price_for_order
 from app.services.email_service import send_order_notification_email
+from app.core.ws_manager import tracking_manager
 import asyncio
 
 
@@ -201,6 +202,10 @@ async def update_order_status(
 
     order.status = new_status
     await db.commit()
+
+    if new_status in (OrderStatus.DELIVERED, OrderStatus.CANCELLED):
+        await tracking_manager.close_chat(str(order_id))
+        tracking_manager.clear(str(order_id))
     await db.refresh(order)
 
     # Send email notification to sender (fire and forget)
