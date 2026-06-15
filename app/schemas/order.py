@@ -42,7 +42,9 @@ class OrderResponse(BaseModel):
     recipient_phone: str
     status: OrderStatus
     sender_id: uuid.UUID
+    sender_name: str | None = None
     driver_id: uuid.UUID | None
+    driver_name: str | None = None
     created_at: datetime
     accepted_at: datetime | None
     picked_up_at: datetime | None

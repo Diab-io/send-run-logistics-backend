@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from fastapi import HTTPException
 from sqlalchemy import select, func, and_
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.models.order import Order, OrderStatus
 from app.models.user import User, UserRole
@@ -69,8 +70,15 @@ async def create_order(data: OrderCreate, sender: User, db: AsyncSession) -> Ord
     return order
 
 
-async def get_order_by_id(order_id: uuid.UUID, db: AsyncSession) -> Order:
-    result = await db.execute(select(Order).where(Order.id == order_id))
+async def get_order_by_id(order_id: uuid.UUID, db: AsyncSession):
+    result = await db.execute(
+        select(Order)
+        .options(
+            selectinload(Order.sender),
+            selectinload(Order.driver),
+        )
+        .where(Order.id == order_id)
+    )
     order = result.scalar_one_or_none()
     if not order:
         raise HTTPException(status_code=404, detail="Order not found")

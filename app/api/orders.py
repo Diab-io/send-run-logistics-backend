@@ -82,7 +82,11 @@ async def get_order(
         from fastapi import HTTPException
         raise HTTPException(status_code=403, detail="Not assigned to you")
 
-    return order
+    return {
+        **order.__dict__,
+        "sender_name": f"{order.sender.first_name} {order.sender.last_name}" if order.sender else None,
+        "driver_name": f"{order.driver.first_name} {order.driver.last_name}" if order.driver else None,
+    }
 
 
 @router.patch("/{order_id}/status", response_model=OrderResponse)
