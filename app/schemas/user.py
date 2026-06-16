@@ -17,7 +17,7 @@ class SenderRead(UserRead):
     pass
 
 class DriverRead(UserRead):
-    otp_verified: bool
+    is_verified: bool
     vehicle_type: VehicleType
     plate_number: str
     state_of_operation: str

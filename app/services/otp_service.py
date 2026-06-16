@@ -22,7 +22,7 @@ async def request_otp(
         raise HTTPException(status_code=404, detail="User not found")
     if user.role != UserRole.DRIVER:
         raise HTTPException(status_code=400, detail="OTP verification is only for driver accounts")
-    if user.otp_verified:
+    if user.is_verified:
         raise HTTPException(status_code=400, detail="Account already verified")
 
     otp = generate_otp()
@@ -44,7 +44,7 @@ async def verify_driver_otp(
 
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    if user.otp_verified:
+    if user.is_verified:
         raise HTTPException(status_code=400, detail="Account already verified")
 
     is_valid = await verify_otp(email, otp)
@@ -52,7 +52,7 @@ async def verify_driver_otp(
         raise HTTPException(status_code=400, detail="Invalid or expired OTP")
 
     await db.execute(
-        update(User).where(User.id == user.id).values(otp_verified=True)
+        update(User).where(User.id == user.id).values(is_verified=True)
     )
     await db.commit()
 

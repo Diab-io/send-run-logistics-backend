@@ -29,7 +29,7 @@ async def get_dashboard_stats(db: AsyncSession) -> dict:
     )
     verified_drivers = await db.execute(
         select(func.count()).select_from(User).where(
-            and_(User.role == UserRole.DRIVER, User.otp_verified == True)
+            and_(User.role == UserRole.DRIVER, User.is_verified == True)
         )
     )
 

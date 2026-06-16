@@ -20,7 +20,7 @@ def require_verified_driver():
     async def _check(user: User = Depends(current_active_user)):
         if user.role != UserRole.DRIVER:
             raise HTTPException(status_code=403, detail="Driver role required")
-        if not user.otp_verified:
+        if not user.is_verified:
             raise HTTPException(status_code=403, detail="Driver account not verified. Complete OTP verification first.")
         return user
     return _check
