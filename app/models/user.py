@@ -22,7 +22,6 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
     last_name: Mapped[str] = mapped_column(String(75))
     phone: Mapped[str] = mapped_column(String(20), unique=True, index=True)
     role: Mapped[UserRole] = mapped_column(SAEnum(UserRole), default=UserRole.SENDER)
-    otp_verified: Mapped[bool] = mapped_column(Boolean, default=False)
     address: Mapped[str] = mapped_column(String(200))
     vehicle_type: Mapped[VehicleType] = mapped_column(SAEnum(VehicleType), nullable=True)
     plate_number: Mapped[str] = mapped_column(String(20), nullable=True)
