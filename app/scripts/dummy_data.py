@@ -185,33 +185,56 @@ def random_date(start_date, end_date):
 
 def _price_logic(route, size, weight, vehicle, day, is_festive, fuel):
     """
-    Simulate realistic informal pricing with noise.
-    This mimics how drivers actually charge — distance matters most,
-    then weight, then mood/negotiation (random noise).
+    Realistic 2025/2026 Nigerian waybill pricing.
+    Based on current fuel costs and informal market rates.
     """
-    base = {"small_car": 500, "big_bus": 300}[vehicle]
-    dist_rate = {"small_car": 15, "big_bus": 10}[vehicle]
-    weight_val = {"very_light": 1, "light": 3.5, "medium": 10, "heavy": 22, "very_heavy": 40}[weight]
-    size_mult = {"envelope": 0.8, "small": 0.9, "medium": 1.0, "large": 1.3, "extra_large": 1.6}[size]
+    dist = route["distance_km"]
+    weight_val = {
+        "very_light": 1.0,
+        "light":      3.5,
+        "medium":     10.0,
+        "heavy":      22.0,
+        "very_heavy": 40.0,
+    }[weight]
 
-    price = base + (route["distance_km"] * dist_rate)
-    price += max(0, weight_val - 5) * {"small_car": 100, "big_bus": 50}[vehicle]
-    price *= size_mult
-    price *= fuel / 700  # fuel adjustment
+    if vehicle == "small_car":
+        base     = 2000
+        per_km   = random.uniform(30, 42)
+        wt_rate  = random.uniform(250, 400)
+    else:
+        base     = 1500
+        per_km   = random.uniform(22, 32)
+        wt_rate  = random.uniform(180, 280)
 
-    # Weekend/festive markup
+    size_mult = {
+        "envelope":    0.65,
+        "small":       0.85,
+        "medium":      1.00,
+        "large":       1.45,
+        "extra_large": 2.00,
+    }[size]
+
+    distance_cost = dist * per_km
+    weight_cost   = max(0, weight_val - 5) * wt_rate
+
+    price = (base + distance_cost + weight_cost) * size_mult
+
+    price *= fuel / 700
+
+    price *= 1 + ((route["risk"] - 1) * random.uniform(0.06, 0.12))
+
     if is_festive:
-        price *= random.uniform(1.15, 1.35)
+        price *= random.uniform(1.25, 1.50)
     elif day in (5, 6):
-        price *= random.uniform(1.05, 1.20)
+        price *= random.uniform(1.10, 1.25)
 
-    # Risk markup
-    price *= 1 + ((route["risk"] - 1) * random.uniform(0.05, 0.10))
+    price *= random.uniform(0.88, 1.12)
 
-    # Driver mood / negotiation noise (±15%)
-    price *= random.uniform(0.85, 1.15)
+    # Floor: no waybill cheaper than ₦1,500
+    price = max(price, 1500)
 
-    return round(max(price, 300), -2)  # round to nearest 100
+    # Round to nearest ₦50
+    return round(price / 50) * 50
 
 
 def generate_dummy_dataset(n_records: int = 300) -> pd.DataFrame:
