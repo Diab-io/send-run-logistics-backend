@@ -73,53 +73,97 @@ async def chat_websocket(
     {"type": "message", "user_id": "...", "first_name": "...", 
      "role": "sender|driver", "text": "...", "timestamp": "..."}
     """
+    await websocket.accept()
+
     token = websocket.query_params.get("token")
     if not token:
-        await websocket.close(code=401, reason="Missing token")
+        await websocket.send_json({"type": "error", "message": "Missing token"})
+        await websocket.close(code=4001, reason="Missing token")
         return
 
-    # Validate token and get user
     try:
-        from app.core.users import get_jwt_strategy
-        strategy = get_jwt_strategy()
-        user = await strategy.read_token(token, None)
-        if not user:
-            await websocket.close(code=401, reason="Invalid token")
+        from jose import jwt, JWTError
+        from app.config import get_settings
+        settings = get_settings()
+
+        payload = jwt.decode(
+            token,
+            settings.JWT_SECRET,
+            algorithms=["HS256"],
+            audience="fastapi-users:auth",
+        )
+        user_id = payload.get("sub")
+        if not user_id:
+            await websocket.send_json({"type": "error", "message": "Invalid token"})
+            await websocket.close(code=4001, reason="Invalid token")
             return
-    except Exception:
-        await websocket.close(code=401, reason="Invalid token")
+
+    except Exception as e:
+        print(f"[CHAT WS] Token decode failed: {e}")
+        await websocket.send_json({"type": "error", "message": "Invalid token"})
+        await websocket.close(code=4001, reason="Invalid token")
         return
 
-    # Check order exists
-    result = await db.execute(select(Order).where(Order.id == order_id))
+    # Fetch user from DB
+    import uuid
+    try:
+        uid = uuid.UUID(user_id)
+    except ValueError:
+        await websocket.close(code=4001, reason="Invalid user ID")
+        return
+
+    result = await db.execute(select(User).where(User.id == uid))
+    user = result.scalar_one_or_none()
+
+    if not user or not user.is_active:
+        await websocket.send_json({"type": "error", "message": "User not found"})
+        await websocket.close(code=4001, reason="User not found")
+        return
+
+    print(f"[CHAT WS] User authenticated: {user.email} role={user.role}")
+
+    # Fetch order
+    try:
+        oid = uuid.UUID(order_id)
+    except ValueError:
+        await websocket.send_json({"type": "error", "message": "Invalid order ID"})
+        await websocket.close(code=4004, reason="Invalid order ID")
+        return
+
+    result = await db.execute(select(Order).where(Order.id == oid))
     order = result.scalar_one_or_none()
 
     if not order:
-        await websocket.close(code=404, reason="Order not found")
+        await websocket.send_json({"type": "error", "message": "Order not found"})
+        await websocket.close(code=4004, reason="Order not found")
         return
+
+    print(f"[CHAT WS] Order found: {order.waybill_number} status={order.status}")
 
     # Check order is active
     if order.status not in CHAT_ALLOWED_STATUSES:
-        await websocket.close(
-            code=403,
-            reason="Chat is only available during active delivery"
-        )
+        await websocket.send_json({
+            "type": "chat_closed",
+            "reason": f"Chat not available. Order status is {order.status.value}"
+        })
+        await websocket.close(code=4003, reason="Order not active")
         return
 
-    # Check user is the sender or assigned driver
+    # Check authorisation
     from app.models.user import UserRole
-    import uuid
-    user_uuid = uuid.UUID(str(user.id))
-    is_sender = order.sender_id == user_uuid
-    is_driver = order.driver_id == user_uuid
+    is_sender = order.sender_id == uid
+    is_driver = order.driver_id == uid
 
     if not is_sender and not is_driver and user.role != UserRole.ADMIN:
-        await websocket.close(code=403, reason="Not authorised for this order")
+        await websocket.send_json({"type": "error", "message": "Not authorised for this order"})
+        await websocket.close(code=4003, reason="Not authorised")
         return
 
-    # Connect to chat
+    print(f"[CHAT WS] All checks passed — connecting to chat room {order_id}")
+
+    # Connect to chat room
     await tracking_manager.chat_connect(
-        order_id=str(order_id),
+        order_id=str(oid),
         websocket=websocket,
         user_id=str(user.id),
         role=user.role.value,
@@ -127,7 +171,6 @@ async def chat_websocket(
 
     try:
         while True:
-            # Wait for message from this client
             data = await websocket.receive_json()
             text = data.get("text", "").strip()
 
@@ -141,15 +184,14 @@ async def chat_websocket(
                 })
                 continue
 
-            # Check order is still active before sending
+            # Re-check order is still active
             await db.refresh(order)
             if order.status not in CHAT_ALLOWED_STATUSES:
-                await tracking_manager.close_chat(str(order_id))
+                await tracking_manager.close_chat(str(oid))
                 break
 
-            # Broadcast message to all chat participants
             await tracking_manager.send_message(
-                order_id=str(order_id),
+                order_id=str(oid),
                 user_id=str(user.id),
                 first_name=user.first_name,
                 role=user.role.value,
@@ -157,6 +199,8 @@ async def chat_websocket(
             )
 
     except WebSocketDisconnect:
-        tracking_manager.chat_disconnect(str(order_id), websocket)
-    except Exception:
-        tracking_manager.chat_disconnect(str(order_id), websocket)
+        print(f"[CHAT WS] Client disconnected: {user.email}")
+        tracking_manager.chat_disconnect(str(oid), websocket)
+    except Exception as e:
+        print(f"[CHAT WS] Error: {e}")
+        tracking_manager.chat_disconnect(str(oid), websocket)

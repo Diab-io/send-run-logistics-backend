@@ -59,7 +59,7 @@ class TrackingManager:
         user_id: str,
         role: str,
     ):
-        await websocket.accept()
+        #await websocket.accept()
 
         if order_id not in self.chat_connections:
             self.chat_connections[order_id] = []
