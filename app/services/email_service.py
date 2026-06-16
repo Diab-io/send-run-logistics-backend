@@ -23,7 +23,7 @@ mail_client = FastMail(config)
 async def send_otp_email(email: str, otp: str, first_name: str):
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
-        <h2 style="color: #1a73e8;">Ondo Logistics — Driver Verification</h2>
+        <h2 style="color: #1a73e8;">SendRun - Driver Verification</h2>
         <p>Hello {first_name},</p>
         <p>Your one-time verification code is:</p>
         <div style="background: #f0f4f8; padding: 20px; text-align: center;
@@ -34,11 +34,11 @@ async def send_otp_email(email: str, otp: str, first_name: str):
         <p>This code expires in <strong>10 minutes</strong>.</p>
         <p>If you did not request this, ignore this email.</p>
         <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-        <p style="color: #888; font-size: 12px;">Ondo State Intelligent Logistics Platform</p>
+        <p style="color: #888; font-size: 12px;">SendRun Intelligent Logistics Platform</p>
     </div>
     """
     message = MessageSchema(
-        subject="Your Verification Code — Ondo Logistics",
+        subject="Your Verification Code - SendRun",
         recipients=[email],
         body=html,
         subtype=MessageType.html,
@@ -76,7 +76,7 @@ async def send_order_notification_email(
             </tr>
         </table>
         <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-        <p style="color: #888; font-size: 12px;">Ondo State Intelligent Logistics Platform</p>
+        <p style="color: #888; font-size: 12px;">SendRun Intelligent Logistics Platform</p>
     </div>
     """
     message = MessageSchema(
@@ -104,11 +104,11 @@ async def send_driver_welcome_email(email: str, first_name: str):
         </ul>
         <p>Open the driver dashboard in your browser to get started.</p>
         <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-        <p style="color: #888; font-size: 12px;">Ondo State Intelligent Logistics Platform</p>
+        <p style="color: #888; font-size: 12px;">SendRun Intelligent Logistics Platform</p>
     </div>
     """
     message = MessageSchema(
-        subject="Welcome to Ondo Logistics — Driver Verified",
+        subject="Welcome to SendRun Logistics - Driver Verified",
         recipients=[email],
         body=html,
         subtype=MessageType.html,
