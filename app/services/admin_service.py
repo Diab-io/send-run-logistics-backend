@@ -34,8 +34,8 @@ async def get_dashboard_stats(db: AsyncSession) -> dict:
     )
 
     # Revenue
-    avg_price = await db.execute(select(func.avg(Order.predicted_price)))
-    total_revenue = await db.execute(select(func.sum(Order.predicted_price)))
+    avg_price = await db.execute(select(func.avg(Order.price)))
+    total_revenue = await db.execute(select(func.sum(Order.price)))
 
 
     return {
@@ -74,7 +74,7 @@ async def get_route_activity(db: AsyncSession, limit: int = 10) -> list[dict]:
             Order.origin_park,
             Order.destination,
             func.count().label("order_count"),
-            func.avg(Order.predicted_price).label("avg_price"),
+            func.avg(Order.price).label("avg_price"),
         )
         .group_by(Order.origin_park, Order.destination)
         .order_by(func.count().desc())
