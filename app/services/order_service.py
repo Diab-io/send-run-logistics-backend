@@ -115,6 +115,24 @@ async def list_sender_orders(
     return {"orders": orders, "total": total, "page": page, "per_page": per_page}
 
 
+async def list_all_orders(db: AsyncSession, page: int = 1, per_page: int = 20) -> dict:
+    """Admin view — every order regardless of sender/driver."""
+    offset = (page - 1) * per_page
+
+    count_q = await db.execute(select(func.count()).select_from(Order))
+    total = count_q.scalar()
+
+    result = await db.execute(
+        select(Order)
+        .order_by(Order.created_at.desc())
+        .offset(offset)
+        .limit(per_page)
+    )
+    orders = list(result.scalars().all())
+
+    return {"orders": orders, "total": total, "page": page, "per_page": per_page}
+
+
 async def list_available_orders(db: AsyncSession, page: int = 1, per_page: int = 20) -> dict:
     """Orders available for drivers to accept."""
     offset = (page - 1) * per_page

@@ -12,6 +12,7 @@ from app.services.order_service import (
     list_sender_orders,
     list_available_orders,
     list_driver_orders,
+    list_all_orders,
     update_order_status,
 )
 from app.api.deps import require_role, require_verified_driver
@@ -42,8 +43,8 @@ async def get_my_orders(
     elif user.role == UserRole.DRIVER:
         result = await list_driver_orders(user.id, db, page, per_page)
     else:
-        # Admin sees everything — could add a list_all_orders if needed
-        result = await list_sender_orders(user.id, db, page, per_page)
+        # Admin sees everything
+        result = await list_all_orders(db, page, per_page)
     return result
 
 
