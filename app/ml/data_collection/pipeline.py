@@ -160,6 +160,10 @@ def build_master_dataset(
 
     # 7. Drop rows missing any required column
     df = df.dropna(subset=REQUIRED_COLUMNS)
+    df["price"] = pd.to_numeric(
+    df["price"].astype(str).str.replace(",", "").str.replace("₦", "").str.strip(),
+        errors="coerce"
+    )
     df = df[df["price"] > 0]
     print(f"  Final clean dataset: {len(df)} records")
 
